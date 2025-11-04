@@ -38,8 +38,14 @@ RUN pip3 install --pre torch torchvision --index-url https://download.pytorch.or
 	#&& pip install --prefer-binary --no-cache-dir SimpleITK==2.3.1
 
 # 你的第三方库
-COPY requirementssimple.txt /env/requirementssimple.txt
-RUN pip install -U pip && pip install --no-cache-dir -r /env/requirementssimple.txt
+COPY requirements.txt /env/requirements.txt
+RUN pip install -U pip && pip install --no-cache-dir -r /env/requirements.txt
+
+COPY requirements2.txt /env/requirements2.txt
+RUN pip install -U pip && pip install --no-cache-dir -r /env/requirements2.txt
+
+COPY requirements3.txt /env/requirements3.txt
+RUN pip install -U pip && pip install --no-cache-dir -r /env/requirements3.txt
 
 
 # GitHub installations:
